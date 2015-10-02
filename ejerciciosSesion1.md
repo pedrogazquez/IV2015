@@ -1,4 +1,4 @@
-##Ejercicio1: 1. Consultar en el catálogo de alguna tienda de informática el precio de un ordenador tipo servidor y calcular su coste de amortización a cuatro y siete años. ##
+##Ejercicio1: Consultar en el catálogo de alguna tienda de informática el precio de un ordenador tipo servidor y calcular su coste de amortización a cuatro y siete años. ##
 La tienda de informática que he consultado ha sido pccomponentes y el servidor que he seleccionado es un 
 [HP ProLiant ML310e](http://www.pccomponentes.com/hp_proliant_ml310e_g8_xe_e3_1220_8gb_2tb.html) que tiene 
 un precio de **729€** (**602.48€ sin IVA**). Suponiendo que el servidor lo he comprado en Enero de el año 2015 
