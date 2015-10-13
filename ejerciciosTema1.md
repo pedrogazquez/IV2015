@@ -41,9 +41,9 @@ flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36
 
 fpu es un flag de Intel (Floating Point Support) salen 4 uno por cada núcleo (virtual y físico, dos y dos) del procesador.
 
-##Ejercicio 5: 1.Comprobar si el núcleo instalado en tu ordenador contiene este módulo del kernel usando la orden kvm-ok.
-
-2.Instalar un hipervisor para gestionar máquinas virtuales, que más adelante se podrá usar en pruebas y ejercicios.##
-
-apt-get install xen-linux-system
+##Ejercicio 5: 1.Comprobar si el núcleo instalado en tu ordenador contiene este módulo del kernel usando la orden kvm-ok.##
+Al ejecutar el comando compruebo que no lo tiene ya que me devuelve por pantalla: 
+**INFO: Your CPU does not support KVM extensions KVM acceleration can NOT be used**
+##2.Instalar un hipervisor para gestionar máquinas virtuales, que más adelante se podrá usar en pruebas y ejercicios.##
+El hipervisor que he elegido Xen un hipervisor para gestionar máquinas virtuales de código abierto desarrollado por la Universidad de Cambridge y lo he instalado con el siguiente comando: **apt-get install xen-linux-system**.
 
