@@ -48,7 +48,7 @@ Con este código compruebo si en attr (que contiene los atributos) se ha añadid
 
 ![AsserCss](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/ej6-hayCSS-Aser_zpsiftvkgy2.png)
 
-En cambio una vez que definimos el css añadiendo esta línea ** link href="/static/estilos.css" rel="stylesheet" type="text/css"** todo funciona correctamente:
+En cambio una vez que definimos el css añadiendo esta línea ** link href="/static/estilos.css" rel="stylesheet" type="text/css" ** todo funciona correctamente:
 
 ![CorrecCss](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/ej6-hayCSS-Coorec_zpsxm1npwtq.png)
 
