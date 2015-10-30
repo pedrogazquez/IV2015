@@ -54,4 +54,17 @@ En cambio una vez que definimos el css añadiendo esta línea: link href="/stati
 
 
 ##Ejercicios 7: Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.##
-Para realizar programas de test en Python se utiliza la librería Unittest, que es un framework de testing que es una versión del lenguaje de Python de  Junit. Para incluir esta librería debemos añadir un import unittest
+Para realizar programas de test en Python se utiliza la librería Unittest, que es un framework de testing que es una versión del lenguaje de Python de  Junit. Para incluir esta librería debemos añadir un import unittest. He introducido dos test, uno para comprobar la etiqueta HTML y otro para asegurar que se ha introducido el css correctamente. Estas son las funciones con los que los he definido:
+
+![Tests](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/ej7testRealized_zpst3nw8mlk.png)
+
+He eliminado la etiqueta HTML para comprobar que efectivamente funcionan los tests:
+
+![fallo](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/ej7Fallo_zps5vcxften.png)
+
+Luego la he vuelto a poner, y los tests se han ejecutado correctamente:
+
+![todoOK](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/testCorrect_zpsfr82scvz.png)
+
+
+Por último [aquí dejo un enlace a mi app y al test que he creado](https://github.com/pedrogazquez/Proyecto-IV/tree/master/appIV)
