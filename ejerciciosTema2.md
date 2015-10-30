@@ -41,9 +41,14 @@ Para realizar este ejercicio dado que mi pequeña aplicación en python consiste
 Como se puede ver en la imagen las primeras aserciones que he escrito son basicamente dos, bueno, en realidad una sola aserción en la que englobo la existencia de dos etiquetas, una la de html, es decir, que el documento abra y cierre correctamente con las etiquetas **<html>** y **</html>** y otra que el título de la página se encuentre en tamaño h1 y por tanto que estén las etiquetas **h1** y **/h1**.  Las etiquetas de inicio se encuentran definidas en la función **handle_starttag** y las de fin en **handle_endtag** como se puede ver en la imagen, en estas he utilizado una variable numérica para las comprobaciones.
 
 La nueva funcionalidad que he elegido para probar que falle, es incluir una hoja de estilos (.css) en una de las páginas devueltas en una ruta, en concreto la de profesor. He añadido lo siguiente en mi función de HTMLParser:
+
 ![ParserCSS](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/ej6-hayCSS_zpseezcutdp.png)
-Con este código compruebo si en attr (que contiene los atributos) se ha añadido el css correctamente. Una vez añadido esto y introduciendo la asercción correctamente antes de servir la página: **assert hay_css == 1**, sin haber definido un css nos salta la aserción: ![AsserCss](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/ej6-hayCSS-Aser_zpsiftvkgy2.png)
-En cambio una vez que definimos el css todo funciona correctamente: ![CorrecCss](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/ej6-hayCSS-Coorec_zpsxm1npwtq.png)
 
+Con este código compruebo si en attr (que contiene los atributos) se ha añadido el css correctamente. Una vez añadido esto y introduciendo la asercción correctamente antes de servir la página: **assert hay_css == 1**, sin haber definido un css nos salta la aserción: 
 
-Añadiendo esta línea **<link href="/static/estilos.css" rel="stylesheet" type="text/css" />**
+![AsserCss](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/ej6-hayCSS-Aser_zpsiftvkgy2.png)
+
+En cambio una vez que definimos el css añadiendo esta línea **<link href="/static/estilos.css" rel="stylesheet" type="text/css" />** todo funciona correctamente:
+
+![CorrecCss](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/ej6-hayCSS-Coorec_zpsxm1npwtq.png)
+
