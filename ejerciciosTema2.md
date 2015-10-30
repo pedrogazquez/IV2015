@@ -52,3 +52,6 @@ En cambio una vez que definimos el css añadiendo esta línea: link href="/stati
 
 ![CorrecCss](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/ej6-hayCSS-Coorec_zpsxm1npwtq.png)
 
+
+##Ejercicios 7: Convertir los tests unitarios anteriores con assert a programas de test y ejecutarlos desde mocha, usando descripciones del test y del grupo de test de forma correcta. Si hasta ahora no has subido el código que has venido realizando a GitHub, es el momento de hacerlo, porque lo vamos a necesitar un poco más adelante.##
+Para realizar programas de test en Python se utiliza la librería Unittest, que es un framework de testing que es una versión del lenguaje de Python de  Junit. Para incluir esta librería debemos añadir un import unittest
