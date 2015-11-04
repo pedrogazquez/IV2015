@@ -2,7 +2,7 @@
 
 
 ##Ejercicios 2: Crear una aplicación en OpenShift y dentro de ella instalar WordPress. ##
-
+Esta es la aplicación sencilla que he creado en wordpress dentro de OpenShift [aplicación en wordpress] (http://php-ejer2.rhcloud.com/)
 
 ##Ejercicios 3: Realizar una app en express (o el lenguaje y marco elegido) que incluya variables como en el caso anterior.##
 
