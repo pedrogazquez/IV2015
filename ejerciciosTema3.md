@@ -5,7 +5,8 @@ Me he dado de alta en Heroku y en OpenShift como se puede ver en las siguientes 
 ![openshift](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-04%20112413_zpsm8s2etno.png)
 
 ##Ejercicios 2: Crear una aplicación en OpenShift y dentro de ella instalar WordPress. ##
-Esta es la aplicación sencilla que he creado en wordpress dentro de OpenShift [aplicación en wordpress] (http://php-ejer2.rhcloud.com/).
+Esta es la aplicación sencilla que he creado en wordpress dentro de OpenShift [aplicación en wordpress] (http://php-ejer2.rhcloud.com/). Aquí una captura:
+![wordpress](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-04%20112056_zpslltlhm7r.png)
 
 ##Ejercicios 3: Realizar una app en express (o el lenguaje y marco elegido) que incluya variables como en el caso anterior.##
 
