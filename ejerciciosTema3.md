@@ -85,7 +85,8 @@ cd python-getting-started
 ```
 Seguidamente procedemos a desplegar nuestra aplicación, primero hacemos el create que nos creará una aplicación con un nombre aleatorio si no le indicamos ningún nombre:
 ![create](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-14%20140100_zpsd8feyv9r.png)
-Una vez hecho esto desplegamos nuestro código con *git push heroku master*:
+
+Ahora desplegamos nuestro código con *git push heroku master*:
 ![push](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-14%20140903_zpswqazogve.png)
 
 Después de hacer esto lo último que nos queda es abrir la aplicación con las siguientes órdenes:
