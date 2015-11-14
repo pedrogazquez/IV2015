@@ -9,7 +9,62 @@ Esta es la aplicación sencilla que he creado en wordpress dentro de OpenShift [
 ![wordpress](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-06%20095758_zpsnafyfc5j.png)
 
 ##Ejercicios 3: Realizar una app en express (o el lenguaje y marco elegido) que incluya variables como en el caso anterior.##
+Ya que mi proyecto lo estoy haciendo conunto con DAI, este ejercicio lo he hecho con una aplicación de Python con el micro framework Flask, mediante el cual uso varias variables para guardar usuarios mediante la ruta de la dirección como en el ejemplo. Esta es mi app:
+```
+from wtforms import *
+from flask import Flask, session, redirect, url_for, escape, request, render_template
+import sys, pydoc
+from HTMLParser import HTMLParser
 
+reload(sys)
+sys.setdefaultencoding('utf-8')
+app = Flask(__name__)
+#Expresion regular para que el numero de VISA sea corecto
+regVISA='(\d\d\d\d)[ \-](\d\d\d\d)[ \-](\d\d\d\d)[ \-](\d\d\d\d)$'
+listUsers = []
+listSurna = []
+
+class RegistrationForm(Form):
+	username = TextField('Nombre: ', [validators.Length(min=4, max=25)])
+	userap = TextField('Apellidos: ', [validators.Length(min=4, max=50)])
+	email = TextField('Correo electronico', [validators.Length(min=6, max=35),validators.Required(),validators.Email(message='El email es incorrecto')])
+	visaNum = TextField('Numero de VISA', [validators.Length(min=6, max=35),validators.Required(),validators.Regexp(regVISA, flags=0, message='Numero de VISA incorrecto')])
+	nacimiento = DateField('Fecha de nacimiento: ', format='%Y-%m-%d')
+	direccion = TextField('Direccion: ', [validators.Length(min=6, max=60)])
+	password = PasswordField('Contrasenia', [validators.Required(),validators.EqualTo('confirm', message='La contrasenia debe coincidir con la repeticion')])
+	confirm = PasswordField('Repite la contrasenia')
+	accept_tos = BooleanField('Acepto las condiciones', [validators.Required()])
+	formaPago = SelectField(u'Forma de pago', choices=[('contra', 'Contra reembolso'), ('visa', 'Tarjeta VISA')])
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+	form = RegistrationForm(request.form)
+	if request.method == 'POST' and form.validate():
+		return('Gracias %s por registrarte!' % form.username.data)
+	return render_template('register.html', form=form)
+
+@app.route('/users')
+def showUsers():
+	return 'Esta es la lista de usuarios registrados: ' + ',\n'.join(map(str,listUsers))
+
+@app.route('/add/<username>')
+def	addUser(username):
+	listUsers.append(username)
+	return 'Usuario registrado. Pruebe /users para ver los usuarios'
+
+@app.route('/')
+def index():
+	form = RegistrationForm(request.form)
+	return render_template('index.html', form=form)
+	
+if __name__ == '__main__':
+    app.run(host='0.0.0.0',debug=True)  # 0.0.0.0 para permitir conexiones desde cualquier sitio. Ojo, peligroso en modo debug
+
+```
+Y aquí dos capturas añadiendo un usuario:
+![add](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/ej8-2_zpskbysdgaa.png)
+y mostrando los usuarios:
+![user](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/ej3-2_zpspmqt8gtp.png)
 
 ##Ejercicios 4: Crear pruebas para las diferentes rutas de la aplicación. ##
 
