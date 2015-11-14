@@ -62,9 +62,13 @@ if __name__ == '__main__':
 
 ```
 Y aquí dos capturas añadiendo un usuario:
+
 ![add](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/ej8-2_zpskbysdgaa.png)
+
 y mostrando los usuarios:
+
 ![user](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/ej3-2_zpspmqt8gtp.png)
+
 
 ##Ejercicios 4: Crear pruebas para las diferentes rutas de la aplicación. ##
 
