@@ -74,7 +74,28 @@ y mostrando los usuarios:
 He realizado pruebas para 
 
 ##Ejercicios 5: Instalar y echar a andar tu primera aplicación en Heroku.##
+Para realzar este ejercicio lo primero que he hecho ha sido descargar el cinturón de herramientas de heroku con la siguiente línea:
+```
+wget -O- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+```
+Una vez hecho esto, hacemos *heroku login* con nuestros credenciales y después procedemos a hacer el clone para guardar el repositorio en nuestra carpeta local:
+```
+git clone https://github.com/heroku/python-getting-started.git
+cd python-getting-started
+```
+Seguidamente procedemos a desplegar nuestra aplicación, primero hacemos el create que nos creará una aplicación con un nombre aleatorio si no le indicamos ningún nombre:
+![create](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-14%20140100_zpsd8feyv9r.png)
+Una vez hecho esto desplegamos nuestro código con *git push heroku master*:
+![push](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-14%20140903_zpswqazogve.png)
 
+Después de hacer esto lo último que nos queda es abrir la aplicación con las siguientes órdenes:
+```
+heroku ps:scale web=1
+heroku open
+```
+En mi caso el nombre aleatorio ha sido [pacific-garden-4019](https://pacific-garden-4019.herokuapp.com/):
+
+![final](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-14%20142852_zpsr8qiibdn.png)
 
 ##Ejercicios 6: Usar como base la aplicación de ejemplo de heroku y combinarla con la aplicación en node que se ha creado anteriormente. Probarla de forma local con foreman. Al final de cada modificación, los tests tendrán que funcionar correctamente; cuando se pasen los tests, se puede volver a desplegar en heroku.##
 
