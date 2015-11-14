@@ -9,7 +9,7 @@ Esta es la aplicación sencilla que he creado en wordpress dentro de OpenShift [
 ![wordpress](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-06%20095758_zpsnafyfc5j.png)
 
 ##Ejercicios 3: Realizar una app en express (o el lenguaje y marco elegido) que incluya variables como en el caso anterior.##
-Ya que mi proyecto lo estoy haciendo conunto con DAI, este ejercicio lo he hecho con una aplicación de Python con el micro framework Flask, mediante el cual uso varias variables para guardar usuarios mediante la ruta de la dirección como en el ejemplo. Esta es mi app:
+Ya que mi proyecto lo estoy haciendo conunto con DAI, este ejercicio lo he hecho con una aplicación de Python con el micro framework Flask, mediante el cual uso varias variables para guardar usuarios mediante la ruta de la dirección como en el ejemplo. Esta es mi app, la cual tiene cuatro rutas distintas:
 ```
 from wtforms import *
 from flask import Flask, session, redirect, url_for, escape, request, render_template
@@ -71,7 +71,7 @@ y mostrando los usuarios:
 
 
 ##Ejercicios 4: Crear pruebas para las diferentes rutas de la aplicación. ##
-
+He realizado pruebas para 
 
 ##Ejercicios 5: Instalar y echar a andar tu primera aplicación en Heroku.##
 
