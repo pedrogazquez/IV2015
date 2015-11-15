@@ -71,8 +71,67 @@ y mostrando los usuarios:
 
 
 ##Ejercicios 4: Crear pruebas para las diferentes rutas de la aplicación. ##
-He realizado pruebas para 
+He realizado pruebas con la bilbioteca unittest de Python con tres tests, que lo que hacen es: uno comprueba que existe formulariom, otro que el documento es html y otro que existe un css. Aquí el código:
+```
+import unittest
+from formu import register
+from HTMLParser import HTMLParser
 
+ini_html = 0
+fin_html = 0
+hay_css = 0
+hay_form = 0
+html_css = ""
+class ComprobarEtiquetas(HTMLParser):
+	def handle_starttag(self, tag, attrs):
+		global ini_html
+		global hay_css
+		global hay_form
+		if tag=='html':
+			ini_html = 1
+		for attr in attrs:
+			if (attr[0] == 'href' and attr[1] == '/static/style.css'):
+				hay_css = 1
+		for attr in attrs:
+			if (attr[0] == 'method' and attr[1] == 'post'):
+				hay_form = 1
+	def handle_endtag(self, tag):
+		global fin_html
+		if tag=='html':
+			fin_html = 1
+
+class TestStringMethods(unittest.TestCase):
+	
+	def test_comprobarformu(self):
+		global hay_form
+		hay_form = 0
+		parser = ComprobarEtiquetas()
+		html_registro=register()
+		parser.feed(html_registro)
+		self.assertEqual(hay_form,1)
+
+
+	def test_comprobarHTML(self):
+		global ini_html
+		ini_html = 1
+		parser = ComprobarEtiquetas()
+		html_index = index()
+		parser.feed(html_index)
+		self.assertEqual(ini_html,1)
+
+	def test_comprobarCSS(self):
+		global hay_css
+		global html_css
+		hay_css = 1
+		parser = ComprobarEtiquetas()
+		html_css=register()
+		parser.feed(html_css)
+		self.assertEqual(hay_form,1)
+
+
+if __name__ == '__main__':
+    unittest.main()
+```
 ##Ejercicios 5: Instalar y echar a andar tu primera aplicación en Heroku.##
 Para realzar este ejercicio lo primero que he hecho ha sido descargar el cinturón de herramientas de heroku con la siguiente línea:
 ```
