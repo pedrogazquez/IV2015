@@ -162,7 +162,75 @@ En mi caso el nombre aleatorio ha sido [pacific-garden-4019](https://pacific-gar
 
 ##Ejercicios 7: Haz alguna modificación a tu aplicación en node.js para Heroku, sin olvidar añadir los tests para la nueva funcionalidad, y configura el despliegue automático a Heroku usando Snap CI o alguno de los otros servicios, como Codeship, mencionados en StackOverflow ##
 
+Después de modificar mi aplicación he subido la aplicación a Heroku, [este es el enlace a ella](https://warm-sands-2560.herokuapp.com/). Para ello lo que he hecho ha sido, primero registrarme en heroku, después he clonado mi repositorio donde guardo la aplicación. Lo proximo que hay que hacer es teclear las siguientes órdenes en el terminal dentro del repositorio de nuestra aplicación que hemos clonado:
+```
+heroku create
+git push heroku master
+```
+Con heroku create, si no le indicamos nada, nos crea la app con un nombre aleatorio, que en mi caso ha sido [warm-sands-2560](https://warm-sands-2560.herokuapp.com/).
+Lo proximo que he hecho ha sido crear un proceso de integración contínua junto al despliegue automático tanto en Heroku como en Snap CI. Para realizarlo en heroku, al conectarlo con GitHub debes aceptar la siguiente ventana emergente:
+
+![heroku123](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-16%20005315_zpssvdmjoei.png)
+
+Una vez hecho esto, habilitamos que no despliegue hasta que no pase los tests para la IC:
+
+![ic](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-16%20005451_zpsca57kxdz.png)
+
+Como se puede ver en la imagen el proceso de intregración continua está correctamente configurado.
+Otra opción es hacerlo con Snap CI, en el cual debes conectarte con GitHub y aceptar las condiciones:
+
+![snap](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-16%20003846_zpspefwdnws.png)
+
+Y por último, podemos comprobar que también está correctamente configurado el proceso de IC con Snap CI:
+
+![snap1222](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-16%20004423_zpsqfhzcdku.png)
+
 
 ##Ejercicios 8: Preparar la aplicación con la que se ha venido trabajando hasta este momento para ejecutarse en un PaaS, el que se haya elegido. ##
+
+Esto lo he definido en la práctica, pero lo que he hecho es, primero he tenido que definir mi archivo [Procfile](https://github.com/pedrogazquez/Proyecto-IV/blob/master/Procfile):
+```
+web: python formu.py
+```
+y el que ya tenía que también es necesario de [requirements.txt](https://github.com/pedrogazquez/Proyecto-IV/blob/master/requirements.txt):
+```
+Flask==0.10.1
+gunicorn==19.3.0
+html5lib==0.999
+itsdangerous==0.24
+Jinja2==2.8
+MarkupSafe==0.23
+requests==2.2.1
+six==1.5.2
+ssh-import-id==3.21
+urllib3==1.7.1
+virtualenv==13.1.2
+Werkzeug==0.10.4
+WTForms==2.0.2
+wheel==0.24.0
+yolk==0.4.3
+```
+He subido la aplicación a Heroku, [este es el enlace a ella](https://warm-sands-2560.herokuapp.com/). Para ello lo que he hecho ha sido, primero registrarme en heroku, después he clonado mi repositorio donde guardo la aplicación. Lo proximo que hay que hacer es teclear las siguientes órdenes en el terminal dentro del repositorio de nuestra aplicación que hemos clonado:
+```
+heroku create
+git push heroku master
+```
+Con heroku create, si no le indicamos nada, nos crea la app con un nombre aleatorio, que en mi caso ha sido [warm-sands-2560](https://warm-sands-2560.herokuapp.com/).
+Lo proximo que he hecho ha sido crear un proceso de integración contínua junto al despliegue automático tanto en Heroku como en Snap CI. Para realizarlo en heroku, al conectarlo con GitHub debes aceptar la siguiente ventana emergente:
+
+![heroku123](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-16%20005315_zpssvdmjoei.png)
+
+Una vez hecho esto, habilitamos que no despliegue hasta que no pase los tests para la IC:
+
+![ic](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-16%20005451_zpsca57kxdz.png)
+
+Como se puede ver en la imagen el proceso de intregración continua está correctamente configurado.
+Otra opción es hacerlo con Snap CI, en el cual debes conectarte con GitHub y aceptar las condiciones:
+
+![snap](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-16%20003846_zpspefwdnws.png)
+
+Y por último, podemos comprobar que también está correctamente configurado el proceso de IC con Snap CI:
+
+![snap1222](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-11-16%20004423_zpsqfhzcdku.png)
 
 
