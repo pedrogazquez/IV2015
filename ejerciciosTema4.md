@@ -4,7 +4,11 @@ He instalado LXC y como se puede comprobar en la siguiente captura la versión q
 
 
 ##Ejercicios 2: Comprobar qué interfaces puente se han creado y explicarlos.
-
+He creado un contenedor debian y lo he arrancado:
+```
+sudo lxc-create -t debian -n micont-debian
+sudo lxc-start -n micont.debian
+```
 
 ##Ejercicios 3: 1. Crear y ejecutar un contenedor basado en Debian. 2. Crear y ejecutar un contenedor basado en otra distribución, tal como Fedora. Nota En general, crear un contenedor basado en tu distribución y otro basado en otra que no sea la tuya. Fedora, al parecer, tiene problemas si estás en Ubuntu 13.04 o superior, así que en tal caso usa cualquier otra distro. Por ejemplo, Óscar Zafra ha logrado instalar Gentoo usando un script descargado desde su sitio, como indica en este comentario en el issue.
 
