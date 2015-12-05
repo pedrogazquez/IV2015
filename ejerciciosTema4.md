@@ -42,8 +42,15 @@ sudo apt-get -y install docker.io
 Una vez instalado lo he arrancado con **sudo docker -d &**:
 ![docker](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-12-05%20132804_zpslmy5q29a.png)
 
-##Ejercicios 7: 1. Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS. 2. Buscar e instalar una imagen que incluya MongoDB.
+Cada vez que arranquemos debemos borrar el archivo **docker.pid** con:
+```
+sudo rm /var/run/docker.pid
+```
 
+##Ejercicios 7: 1. Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS. 2. Buscar e instalar una imagen que incluya MongoDB.
+He instalado ubuntu a partir de docker con **sudo docker pull ubuntu**:
+![dockUb](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-12-05%20133647_zpshhqmufwo.png)
+Y he hecho lo mismo para centos usando **sudo docker pull centos**
 
 ##Ejercicios 8: Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.
 
