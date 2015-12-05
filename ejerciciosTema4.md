@@ -35,7 +35,12 @@ Por último arrancamos la máquina y usará los recursos tal y como hemos especi
 
 
 ##Ejercicios 6: Instalar docker.
-
+He instalado docker con el siguiente comando:
+```
+sudo apt-get -y install docker.io
+```
+Una vez instalado lo he arrancado con **sudo docker -d &**:
+![docker](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-12-05%20132804_zpslmy5q29a.png)
 
 ##Ejercicios 7: 1. Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS. 2. Buscar e instalar una imagen que incluya MongoDB.
 
