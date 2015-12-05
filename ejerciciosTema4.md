@@ -13,7 +13,8 @@ Y estas son las interfaces que se han creado:
 ![inter](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-12-04%20130519_zpsgk2tq5eb.png)
 
 ##Ejercicios 3: 1. Crear y ejecutar un contenedor basado en Debian. 2. Crear y ejecutar un contenedor basado en otra distribución, tal como Fedora. Nota En general, crear un contenedor basado en tu distribución y otro basado en otra que no sea la tuya. Fedora, al parecer, tiene problemas si estás en Ubuntu 13.04 o superior, así que en tal caso usa cualquier otra distro. Por ejemplo, Óscar Zafra ha logrado instalar Gentoo usando un script descargado desde su sitio, como indica en este comentario en el issue.
-
+El contenedor basado en debian es el creado anteriormente contdebian. El contenedor creado y ejecutado basado en otra distrubución que he creado ha sido un contenedor de ubuntu-cloud que he creado como se puede ver en la siguiente imagen:
+![contUC](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-12-05%20120121_zpsxkzvgtbl.png)
 
 ##Ejercicios 4: 1. Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas. 2. Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.
 
