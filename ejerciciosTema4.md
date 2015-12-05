@@ -16,7 +16,19 @@ Y estas son las interfaces que se han creado:
 El contenedor basado en debian es el creado anteriormente contdebian. El contenedor creado y ejecutado basado en otra distrubución que he creado ha sido un contenedor de ubuntu-cloud que he creado como se puede ver en la siguiente imagen:
 ![contUC](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-12-05%20120121_zpsxkzvgtbl.png)
 
-##Ejercicios 4: 1. Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas. 2. Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.
+##Ejercicios 4: 1. Instalar lxc-webpanel y usarlo para arrancar, parar y visualizar las máquinas virtuales que se tengan instaladas. 
+He instalado lxc-webpanel con el siguiente comando:
+```
+wget https://lxc-webpanel.github.io/tools/install.sh -O - | bash
+```
+Introducimos nuestra IPlocal:5000 y como usuario y contraseña una vez en lxc-webpanel ponemos admin en los dos campos:
+![login](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-12-05%20122648_zpsj9dmo2d7.png)
+Se puede ver algunas máquinas paradas y otras que están arrancadas:
+![maquinas](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-12-05%20124242_zpseyotrrgf.png)
+##4:2. Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.
+Para restringir los recursos de una máquina primero la paramos, y cambiamos el valor por defecto de CPU shares y CPUs:
+![recursos](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-12-05%20124503_zpsl2p2xrha.png)
+Por último arrancamos la máquina y usará los recursos tal y como hemos especificado.
 
 
 ##Ejercicios 5: Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor. Usar nginx.
