@@ -50,11 +50,28 @@ sudo rm /var/run/docker.pid
 ##Ejercicios 7: 1. Instalar a partir de docker una imagen alternativa de Ubuntu y alguna adicional, por ejemplo de CentOS. 2. Buscar e instalar una imagen que incluya MongoDB.
 He instalado ubuntu a partir de docker con **sudo docker pull ubuntu**:
 ![dockUb](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-12-05%20133647_zpshhqmufwo.png)
+
 Y he hecho lo mismo para centos usando **sudo docker pull centos**
 
+He buscado y he encontrado [aquí](https://github.com/dockerfile/mongodb): lo he instalado con **sudo docker pull library/mongo**.
+Y aquí se puede ver que la imagen se ha instalado correctamente: 
+
+![mongodb](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-12-08%20192716_zpszpdzsrh9.png)
+
+
 ##Ejercicios 8: Crear un usuario propio e instalar nginx en el contenedor creado de esta forma.
+Para esto lo primero que he hecho ha sido arrancar el docker de ubuntu con **sudo docker run -i -t ubuntu /bin/bash**.
+Posteriormente creamos un usuario, le asignamos una contraseña, le asignamos permisos de superusuario y entramos en él:
 
+![imagenNginx](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202015-12-08%20195031_zpsczcbzbpa.png)
 
+Por último hacemos lo siguiente para instalar nginx:
+```
+sudo apt-get install software-properties-common
+sudo add-apt-repository ppa:nginx/stable
+sudo apt-get install nginx
+```
+Y comprobamos que está correctamente instalado con **service nginx status**
 ##Ejercicios 9: Crear a partir del contenedor anterior una imagen persistente con commit.
 
 
