@@ -138,7 +138,7 @@ int main(int args, char* argv[])
 Para compilarlo se tiene que ejecutar **gcc benchmark.c** y luego ejecutarlo. 
 Para arrancar la máquina virtual en modo normal tecleamos:
 ```
-qemu-system-x86_64 -hda fichero-cow2.qcow2.
+qemu-system-x86_64 -hda fichero-cow2.qcow2
 ```
 Para arrancarla con paravirtualización usamos lo siguiente: 
 ```
@@ -146,7 +146,9 @@ qemu-system-x86_64 -boot order=c -drive file=fichero-cow2.qcow2,if=virtio
 ```
 En mi caso los tiempos usando paravirtualización y los tiempos usando virtualización normal son muy parecidos y no tienen diferencias significativas.
 ##Ejercicios 4: Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
+Algunos sistemas con entorno gráfico LXDE son: Debian, Fedora y Lubuntu. Yo he elegido Lubuntu de 32 bits y he procedido a instalarlo en una máquina virtual de VirtualBox. Como se puede ver le he asignado 512MB de RAM:
 
+Para conectarnos por ssh debemos añadir una nueva interfaz de red sólo-anfitrión:
 
 ##Ejercicios 5: Crear una máquina virtual ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.
 
