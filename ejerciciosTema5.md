@@ -40,9 +40,16 @@ qemu-system-x86_64 -hda fichero-cow2.qcow2 -cdrom minino-artabros-2.1_minimal.is
 ```
 A continuación podemos ver el sistema operativo instalado correctamente:
 ![minimo](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-02%20120446_zpsguyuqxtp.png)
-Por último he instalado el [ttylinux](http://osarchive.sda1.eu/ttylinux).
+
+
 ## 2.2. Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o Parallels.
 He elegido VirtualBox para realizar este ejercicio, lo primero he ajustado el tamaño de ram y disco duro del nuevo sistema:
+El otro hipervisor que he elegido ha sido VirtualBox y he instalado el [ttylinux](http://osarchive.sda1.eu/ttylinux).
+Para realizarlo primero he configurado el virtualBox como especifico a continuación:
+![configVirtual](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-02%20121405_zpsoi8feyq7.png)
+
+Y luego he arrancado la imagen, y aquí funcionando el ttylinux:
+![ttylinux](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-02%20121542_zpspjddgyul.png)
 
 ##Ejercicios 3: Crear un benchmark de velocidad de entrada salida y comprobar la diferencia entre usar paravirtualización y arrancar la máquina virtual simplemente con qemu-system-x86_64 -hda /media/Backup/Isos/discovirtual.img.
 
