@@ -148,7 +148,23 @@ En mi caso los tiempos usando paravirtualización y los tiempos usando virtualiz
 ##Ejercicios 4: Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
 Algunos sistemas con entorno gráfico LXDE son: Debian, Fedora y Lubuntu. Yo he elegido Lubuntu de 32 bits y he procedido a instalarlo en una máquina virtual de VirtualBox. Como se puede ver le he asignado 512MB de RAM:
 
-Para conectarnos por ssh debemos añadir una nueva interfaz de red sólo-anfitrión:
+![512RAM](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-02%20190921_zpsbnlytd1q.png)
+
+Aquí podemos ver como se está instalando Lubuntu:
+
+![instalandoLubuntu](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-02%20193311_zpsbnyxeumn.png)
+
+Una vez realizado esto, configuramos el adaptador solo-anfitrión para permitir la conexión ssh:
+
+![soloanfi](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-02%20200112_zpsprpd4ik9.png)
+
+Aquí vemos las interfaces de red una vez instalado Lubuntu:
+
+![interLub](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-02%20200417_zpslkfq8l7m.png)
+
+Y aquí la conexión ssh realizada correctamente desde el SO anfitrión:
+
+![conexssh](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-02%20205637_zpsx7mqddst.png)
 
 ##Ejercicios 5: Crear una máquina virtual ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.
 
