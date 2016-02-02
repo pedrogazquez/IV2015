@@ -53,8 +53,98 @@ Y luego he arrancado la imagen, y aquí funcionando el ttylinux:
 ![ttylinux](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-02%20121542_zpspjddgyul.png)
 
 ##Ejercicios 3: Crear un benchmark de velocidad de entrada salida y comprobar la diferencia entre usar paravirtualización y arrancar la máquina virtual simplemente con qemu-system-x86_64 -hda /media/Backup/Isos/discovirtual.img.
+Para realizar este ejercicio he "echado mano" de un benchmark que tenía hecho para otra asignatura para medir la velicidad de entrada y salida de ficheros, el benchmark está en el lenguaje C y es el siguiente:
 
+```
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
 
+void copiarFichero(FILE *fich1, FILE *fich2)
+{
+  char aux;
+  //Situamos el cursor al inicio para empezar a copiar
+  fseek(fich1,SEEK_SET,0);
+  while (!feof(fich1))
+  {
+    aux=getc(fich1);
+    putc(aux ,fich2);
+  }
+}
+
+int main(int args, char* argv[])
+{
+
+  printf("Benchmark de velocidad de entrada/salida para el sistema de ficheros\n");
+  printf("Comrpobando ....\n");
+  FILE * fich1;
+  FILE * fich2;
+  FILE * fich3;
+  FILE * fich4;
+  FILE * resultados;
+  char nombre[20]="destino.txt";
+//  char aux;
+  clock_t t_inicial, t_final;
+  double seg;
+  int i=0;
+  int ronda=0;
+  //Creamos un fichero de 600 mb
+  fich1=fopen("origen.txt","w+");
+  resultados=fopen("Resultado.csv","a");
+  printf("\nCreando un fichero de 1.2 GB para realizar la prueba\n");
+  while(i<1200000000)
+  {
+    putc('a',fich1);
+    i++;
+  }
+  printf("\nFichero grande creado\n");
+  printf("\nVa a comenzar la prueba de rendimiento del sistema de ficheros, esto puede durar un poco, espere....\n");
+
+  while (ronda<15)
+  {
+    fich2=fopen("destino.txt","w");
+    fich3=fopen("destino2.txt","w");
+    fich4=fopen("destino3.txt","w");
+    printf("\nRonda %d\n",ronda);
+    t_inicial=clock();
+    //Copiamos el primer fichero
+    copiarFichero(fich1,fich2);
+    //Copiamos el segundo fichero
+    copiarFichero(fich1,fich3);
+    //Copiamos el tercer fichero
+    copiarFichero(fich1,fich3);
+
+    //Ahora borramos todos los ficheros
+    remove ("destino.txt");
+    remove("destino1.txt");
+    remove("destino2.txt");
+    remove("destino3.txt");
+    t_final=clock();
+    seg = (double)(t_final - t_inicial) / CLOCKS_PER_SEC;
+    printf("%.16g milisegundos\n", seg * 1000.0);
+    //Exportamos los resultados
+    fprintf(resultados,"%.16f\n", seg * 1000.0);
+    ronda++;
+  }
+  remove("origen.txt");
+  fclose(fich1);
+  fclose(fich2);
+  fclose(fich3);
+  fclose(fich4);
+  fclose(resultados);
+  return 0;
+}
+```
+Para compilarlo se tiene que ejecutar **gcc benchmark.c** y luego ejecutarlo. 
+Para arrancar la máquina virtual en modo normal tecleamos:
+```
+qemu-system-x86_64 -hda fichero-cow2.qcow2.
+```
+Para arrancarla con paravirtualización usamos lo siguiente: 
+```
+qemu-system-x86_64 -boot order=c -drive file=fichero-cow2.qcow2,if=virtio
+```
+En mi caso los tiempos usando paravirtualización y los tiempos usando virtualización normal son muy parecidos y no tienen diferencias significativas.
 ##Ejercicios 4: Crear una máquina virtual Linux con 512 megas de RAM y entorno gráfico LXDE a la que se pueda acceder mediante VNC y ssh.
 
 
