@@ -24,7 +24,7 @@ Proceso de instalación:
 ![proceso](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-02%20111810_zpshjp1prey.png)
 
 Como se puede ver instalado correctamente:
-[installed](qemu-system-x86_64)
+![installed](qemu-system-x86_64)
 
 Una vez instalado este se ejecutará automáticamente sino podemos hacerlo con qemu-system-x86_64 y el fichero del almacenamiento virtual creado.
 
