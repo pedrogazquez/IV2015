@@ -17,9 +17,10 @@ qemu-img create -f qcow2 fichero-cow.qcow2 200M
 ```
 ![lsslitaz](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-02%20111155_zps7nizp8ga.png)
 
-Ahora instalamos el sistema con el fichero de almacenamiento virtual creado y la ISO que hemos descargado en la web de ![SliTaz](http://mirror.switch.ch/ftp/mirror/slitaz/iso/stable/).
+Ahora instalamos el sistema con el fichero de almacenamiento virtual creado y la ISO que hemos descargado en la web de [SliTaz](http://mirror.switch.ch/ftp/mirror/slitaz/iso/stable/).
 
 Proceso de instalación:
+
 ![proceso](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-02%20111810_zpshjp1prey.png)
 
 Como se puede ver instalado correctamente:
