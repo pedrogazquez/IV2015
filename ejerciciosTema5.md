@@ -15,7 +15,7 @@ La primera máquina virtual que he creado a sido una con SliTaz, primero he crea
 ```
 qemu-img create -f qcow2 fichero-cow.qcow2 200M
 ```
-![lsslitaz](qemu-img create -f qcow2 fichero-cow.qcow2 200M)
+![lsslitaz](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-02%20111155_zps7nizp8ga.png)
 ## 2.2. Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o Parallels.
 
 
