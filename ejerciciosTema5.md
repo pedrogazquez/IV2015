@@ -11,7 +11,11 @@ Una vez hecho esto he ejecutado sudo kvm-ok y me ha devuelto el siguiente mensaj
 Por lo que mi sistema no soporta virtualización de KVM.
 
 ##Ejercicios 2: 1. Crear varias máquinas virtuales con algún sistema operativo libre tal como Linux o BSD. Si se quieren distribuciones que ocupen poco espacio con el objetivo principalmente de hacer pruebas se puede usar CoreOS (que sirve como soporte para Docker) GALPon Minino, hecha en Galicia para el mundo, Damn Small Linux, SliTaz (que cabe en 35 megas) y ttylinux (basado en línea de órdenes solo). 
-
+La primera máquina virtual que he creado a sido una con SliTaz, primero he creado un disco duro virtual en formato QCOW2 con:
+```
+qemu-img create -f qcow2 fichero-cow.qcow2 200M
+```
+![lsslitaz](qemu-img create -f qcow2 fichero-cow.qcow2 200M)
 ## 2.2. Hacer un ejercicio equivalente usando otro hipervisor como Xen, VirtualBox o Parallels.
 
 
