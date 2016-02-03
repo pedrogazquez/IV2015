@@ -198,7 +198,7 @@ Creando la máquina:
 
 Lo siguiente que hacemos es arrancar la máquina y conectar con ella por ssh:
 ```
-azure vm start pgazquez-ubuntu
+azure vm start ubuntu-pgazquez
 ssh pgazquez@ubuntu-pgazquez.cloudapp.net
 ```
 ![sshAzure](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-02%20215148_zpshiqaag8u.png)
