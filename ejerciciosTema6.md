@@ -115,4 +115,11 @@ antes problema con markupsafe instalar con  pip install markupsafe
 ansible all -u pgazquez -a "sudo apt-get install -y python-setuptools python-dev build-essential git"
 
  all -u pgazquez -m git -a "repo=https://github.com/pedrogazquez/appBares.git  dest=~/pruebaDAI version=HEAD"
+ 
+ 
+ 
+ Problema Pillow: ansible all -m shell -a 'sudo apt-get install -y libtiff4-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms1-dev libwebp-dev'
+ ansible all -u pgazquez -m command -a "sudo easy_install pip" 
+ ansible all -u pgazquez -m command -a "sudo pip install -r pruebaDAI/requirements.txt"
+
 ```
