@@ -95,3 +95,14 @@ YAML y JSON son estándares de representaciones de datos como XML, que hacen má
                 - 10
                 - 11
 ```
+
+##Ejercicios 4: Desplegar los fuentes de la aplicación de DAI o cualquier otra aplicación que se encuentre en un servidor git público en la máquina virtual Azure (o una máquina virtual local) usando ansible.
+Primero instalamos Ansible:
+```
+sudo pip install paramiko PyYAML jinja2 httplib2 ansible
+```
+Luego creamos el fichero "inventario" añadiendo la máquina virtual de Azure:
+```
+echo "ubuntu-pgazquez.cloudapp.net" > ~/ansible_hosts
+
+```
