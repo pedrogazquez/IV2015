@@ -84,14 +84,14 @@ YAML y JSON son estándares de representaciones de datos como XML, que hacen má
 
 ```
 ---
-  uno: "dos"
-  tres: 
-    - 4
-    - 5
-    - "Seis"
-    - 
-      siete: 8
-      nueve: 
-        - 10
-        - 11
+    uno: "dos"
+    tres: 
+        - 4
+        - 5
+        - "Seis"
+        - 
+            siete: 8
+            nueve: 
+                - 10
+                - 11
 ```
