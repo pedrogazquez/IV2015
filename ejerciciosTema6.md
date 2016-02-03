@@ -104,5 +104,15 @@ sudo pip install paramiko PyYAML jinja2 httplib2 ansible
 Luego creamos el fichero "inventario" añadiendo la máquina virtual de Azure:
 ```
 echo "ubuntu-pgazquez.cloudapp.net" > ~/ansible_hosts
+export ANSIBLE_HOSTS=~/ansible_hosts
+ansible all -u pgazquez -m ping
 
+ssh-keygen -t dsa
+ssh-copy-id -i .ssh/id_dsa.pub pgazquez@ubuntu-pgazquez.cloudapp.net
+ssh pgazquez@ubuntu-pgazquez.cloudapp.net
+
+antes problema con markupsafe instalar con  pip install markupsafe
+ansible all -u pgazquez -a "sudo apt-get install -y python-setuptools python-dev build-essential git"
+
+ all -u pgazquez -m git -a "repo=https://github.com/pedrogazquez/appBares.git  dest=~/pruebaDAI version=HEAD"
 ```
