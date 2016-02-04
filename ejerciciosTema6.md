@@ -163,9 +163,36 @@ azure vm shutdown ubuntu-pgazquez
 ```
 
 ##Ejercicios 5: 1.Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
+Lo primero que hacemos es añadir lo siguiente en el archivo **ansible_hosts**:
+![archivoansihosts](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-04%20194256_zps8o5b7ync.png)
+Luego definimos el archivo .yml que en mi caso se llama **scriptansible.yml** y contiene lo siguiente:
+```
+- hosts: azure
+  sudo: yes
+  remote_user: pgazquez
+  tasks:
+  - name: Instalar paquetes 
+    apt: name=python-setuptools state=present
+    apt: name=build-essential state=present
+    apt: name=python-dev state=present
+    apt: name=git state=present
+  - name: Descargar aplicacion de GitHub
+    git: repo=https://github.com/pedrogazquez/appBares.git dest=appBares clone=yes force=yes
+  - name: Permisos de ejecucion
+    command: chmod -R +x appBares
+  - name: Instalar requisitos
+    command: sudo pip install -r appBares/requirements.txt
+  - name: ejecutar
+    command: nohup sudo python appBares/manage.py runserver 0.0.0.0:5050
 
+```
+Y lo he ejecutado con la orden **ansible-playbook -u pgazquez scriptansible.yml** y este ha sido el resultado:
+
+![contenidoplaybook-ansible](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-04%20230742_zpslrk2dbxe.png)
+
+Como resultado la aplicación se ha ejecutado correctamente como el ejercicio anterior.
 ##5.2¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?.
-
+Para mi Ansible es mejor que Chef por dos razones: una que se puede ejecutar de manera remota desde fuera del servidor y otra porque los playbooks son más fáciles de realizar y configurar que las recetas de chef en las cuales es necesario además una jerarquización de directorios. Como contrapartida chef es más rápido.
 
 ##Ejercicios 6: Instalar una máquina virtual Debian usando Vagrant y conectar con ella.
 
