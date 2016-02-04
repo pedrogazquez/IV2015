@@ -197,7 +197,11 @@ Como resultado la aplicación se ha ejecutado correctamente como el ejercicio an
 Para mi Ansible es mejor que Chef por dos razones: una que se puede ejecutar de manera remota desde fuera del servidor y otra porque los playbooks son más fáciles de realizar y configurar que las recetas de chef en las cuales es necesario además una jerarquización de directorios. Como contrapartida chef es más rápido.
 
 ##Ejercicios 6: Instalar una máquina virtual Debian usando Vagrant y conectar con ella.
-
+He añadido en el fichero Vagrant lo siguiente:
+```
+config.vm.provision "shell",
+	inline: "sudo apt-get update && sudo apt-get install -y nginx && sudo service nginx start"
+```
 
 ##Ejercicios 7: Crear un script para provisionar `nginx` o cualquier otro servidor web que pueda ser útil para alguna otra práctica
 
