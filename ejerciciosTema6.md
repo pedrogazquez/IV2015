@@ -157,6 +157,10 @@ Y vemos que todo funciona correctamente en el navegador:
 
 ![appAzureCorriendo](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-04%20190342_zpsejj0nxrs.png)
 
+Por último y como siempre "apagamos" la máquina de azure:
+```
+azure vm shutdown ubuntu-pgazquez
+```
 
 ##Ejercicios 5: 1.Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
 
