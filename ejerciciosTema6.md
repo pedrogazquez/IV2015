@@ -101,25 +101,72 @@ Primero instalamos Ansible:
 ```
 sudo pip install paramiko PyYAML jinja2 httplib2 ansible
 ```
-Luego creamos el fichero "inventario" añadiendo la máquina virtual de Azure:
+Luego creamos el inventario añadiendo la máquina virtual de Azure:
 ```
 echo "ubuntu-pgazquez.cloudapp.net" > ~/ansible_hosts
+```
+Y definimos la variable de entorno para que Ansible sepa donde está el fichero de hosts:
+```
 export ANSIBLE_HOSTS=~/ansible_hosts
-ansible all -u pgazquez -m ping
-
+```
+Lo que hacemos ahora es arrancar la máquina azure del tema anterior, previo logeándonos en azure:
+```
+azure login
+azure vm start ubuntu-pgazquez
+```
+Luego configuramos SSH generando las claves para conectar con la máquina sin necesidad de autenticarnos cada vez:
+```
 ssh-keygen -t dsa
 ssh-copy-id -i .ssh/id_dsa.pub pgazquez@ubuntu-pgazquez.cloudapp.net
-ssh pgazquez@ubuntu-pgazquez.cloudapp.net
-
-antes problema con markupsafe instalar con  pip install markupsafe
-ansible all -u pgazquez -a "sudo apt-get install -y python-setuptools python-dev build-essential git"
-
- all -u pgazquez -m git -a "repo=https://github.com/pedrogazquez/appBares.git  dest=~/pruebaDAI version=HEAD"
- 
- 
- 
- Problema Pillow: ansible all -m shell -a 'sudo apt-get install -y libtiff4-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms1-dev libwebp-dev'
- ansible all -u pgazquez -m command -a "sudo easy_install pip" 
- ansible all -u pgazquez -m command -a "sudo pip install -r pruebaDAI/requirements.txt"
-
 ```
+Como se puede ver efectivamente después de configurar SSH no nos debería de pedir el password:
+![sshazuresin](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-03%20142350_zpsy2fonazf.png)
+
+Ahora comprobamos que hay conexión con Ansible:
+```
+ansible all -u pgazquez -m ping
+```
+Y comprobamos que efectivamente hay:
+![pingAzure](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-03%20142851_zps9zl3jenn.png)
+
+Lo siguiente es instalar las dependencias neccesarias en la máquina para empezar a arrancar nuestra app:
+```
+ansible all -u pgazquez -a "sudo apt-get install -y python-setuptools python-dev build-essential git"
+ansible all -u pgazquez -m command -a "sudo easy_install pip" 
+```
+Una vez hecho esto descargamos la aplicación desde nuestro repositorio  de GitHub:
+```
+all -u pgazquez -m git -a "repo=https://github.com/pedrogazquez/appBares.git  dest=~/pruebaDAI version=HEAD"
+```
+En la siguiente captura vemos que el repositorio se ha copiado correctamente:
+![repoenAzure](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-03%20160827_zpsts3m5kmv.png)
+
+A la hora de instalar los requirements de mi app he tenido problemas con Pillow, así que antes de instalar los requirements ejecutamos el siguiente comando para que no nos de problemas y seguidamente los requirements:
+```
+ansible all -m shell -a 'sudo apt-get install -y libtiff4-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms1-dev libwebp-dev'
+ansible all -u pgazquez -m command -a "sudo pip install -r pruebaDAI/requirements.txt"
+```
+Ya está todo preparado para ejecutar nuestra app así que procedemos a ello, antes tenemos que liberar el puerto 80 para ejecutarla:
+```
+ansible all -u pgazquez -m command -a "sudo fuser -k 80/tcp"
+ansible all -u pgazquez -m command -a "sudo python pruebaDAI/manage.py runserver 0.0.0.0:80"
+```
+![arrancandoEnAzure](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-04%20191638_zpsgidqkwec.png)
+
+Y vemos que todo funciona correctamente en el navegador:
+
+![appAzureCorriendo](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-04%20190342_zpsejj0nxrs.png)
+
+
+##Ejercicios 5: 1.Desplegar la aplicación de DAI con todos los módulos necesarios usando un playbook de Ansible.
+
+##5.2¿Ansible o Chef? ¿O cualquier otro que no hemos usado aquí?.
+
+
+##Ejercicios 6: Instalar una máquina virtual Debian usando Vagrant y conectar con ella.
+
+
+##Ejercicios 7: Crear un script para provisionar `nginx` o cualquier otro servidor web que pueda ser útil para alguna otra práctica
+
+
+##Ejercicios 8: Configurar tu máquina virtual usando vagrant con el provisionador ansible
