@@ -197,13 +197,44 @@ Como resultado la aplicación se ha ejecutado correctamente como el ejercicio an
 Para mi Ansible es mejor que Chef por dos razones: una que se puede ejecutar de manera remota desde fuera del servidor y otra porque los playbooks son más fáciles de realizar y configurar que las recetas de chef en las cuales es necesario además una jerarquización de directorios. Como contrapartida chef es más rápido.
 
 ##Ejercicios 6: Instalar una máquina virtual Debian usando Vagrant y conectar con ella.
+Para realizar este ejercicio lo primero que he hecho ha sido instalar vagrant:
+```
+sudo apt-get install vagrant
+```
+Descargamos el archivo [vagrant_1.8.1_x86_64.deb](https://releases.hashicorp.com/vagrant/1.8.1/) para una versión 5.0.x de VirtualBox y lo instalamos:
+```
+sudo dpkg -i vagrant_1.8.1_x86_64.deb
+```
+Lo siguiente es descargar la imagen Debian como se ha explicado:
+```
+vagrant box add debian https://github.com/holms/vagrant-jessie-box/releases/download/Jessie-v0.1/Debian-jessie-amd64-netboot.box
+```
+
+![vagrantbox](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-04%20235142_zpshy94hyui.png)
+
+Creamos el fichero Vagrantfile:
+```
+vagrant init debian
+```
+Y arrancamos la máquina:
+```
+vagrant up
+```
+
+![vagrantup](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-04%20235142_zpshy94hyui.png)
+
+Y para terminar conectamos con ella por SSH:
+```
+vagrant ssh
+```
+
+![vagrantssh](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-04%20235209_zpsld4tyu1r.png)
+
+##Ejercicios 7: Crear un script para provisionar `nginx` o cualquier otro servidor web que pueda ser útil para alguna otra práctica
 He añadido en el fichero Vagrant lo siguiente:
 ```
 config.vm.provision "shell",
 	inline: "sudo apt-get update && sudo apt-get install -y nginx && sudo service nginx start"
 ```
-
-##Ejercicios 7: Crear un script para provisionar `nginx` o cualquier otro servidor web que pueda ser útil para alguna otra práctica
-
 
 ##Ejercicios 8: Configurar tu máquina virtual usando vagrant con el provisionador ansible
