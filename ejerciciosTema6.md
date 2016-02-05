@@ -210,7 +210,7 @@ Lo siguiente es descargar la imagen Debian como se ha explicado:
 vagrant box add debian https://github.com/holms/vagrant-jessie-box/releases/download/Jessie-v0.1/Debian-jessie-amd64-netboot.box
 ```
 
-![vagrantbox](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-04%20235142_zpshy94hyui.png)
+![vagrantbox](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-04%20234853_zpsxlqy3ra5.png)
 
 Creamos el fichero Vagrantfile:
 ```
@@ -231,10 +231,20 @@ vagrant ssh
 ![vagrantssh](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-04%20235209_zpsld4tyu1r.png)
 
 ##Ejercicios 7: Crear un script para provisionar `nginx` o cualquier otro servidor web que pueda ser útil para alguna otra práctica
-He añadido en el fichero Vagrant lo siguiente:
+He añadido en el fichero **Vagrantfile** lo siguiente:
 ```
 config.vm.provision "shell",
 	inline: "sudo apt-get update && sudo apt-get install -y nginx && sudo service nginx start"
 ```
+Arrancamos la máquina con vagrant up y posteriormente ejecutamos la provisión con **vagrant provision**:
+
+![vagrantprovision](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-05%20101153_zpswvaodxir.png)
+
+Conectamos por ssh como antes (**vagrant ssh**) y luego comprobamos que nginx se ha instalado y está funcionando:
+```
+sudo service nginx status
+```
+
+![nginxvagrant](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-05%20101250_zps1hepxrat.png)
 
 ##Ejercicios 8: Configurar tu máquina virtual usando vagrant con el provisionador ansible
