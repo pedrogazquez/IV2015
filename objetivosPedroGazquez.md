@@ -1,11 +1,11 @@
-# Objetivos de la primera sesión:
+## Objetivos de la primera sesión:
 
 - [x] Entender la metodología docente, de evaluación y de interacción de la asignatura.
 - [x] Darse de alta y comprender el funcionamiento básico de GitHub y la lista de correo de la asignatura; conocer el resto de los recursos de la asignatura.
 - [x] Entender el concepto de software libre y su aplicación práctica en clase.
 - [x] Vernos las caras.
 
-# Objetivos de la segunda sesión:
+## Objetivos de la segunda sesión:
 
 - [x] Comenzar a entender los conceptos fundamentales relacionados con la virtualización.
 - [x] Comprender las técnicas de cálculo del coste de amortización de un equipo informático y aplicarlo al cálculo del coste de uso de un recurso.
@@ -14,7 +14,7 @@
 - [x] Comprender los niveles de virtualización y sus denominaciones genéricas.
 - [x] Comprender el concepto de software as a service y comprender los criterios necesarios para su elección.
 
-# Otros Objetivos:
+## Otros Objetivos:
 
 - [x] Entender el sistema de prácticas, a base de las entregas de hitos de un proyecto, su puntuación y qué es lo que se exige.
 - [x] Tener a punto la instalación de git usando pares clave pública/privada para interaccionar con GitHub (no https).
@@ -27,23 +27,23 @@
 - [] Revisar algún ejercicio de un compañero y sugerir cambios o mejoras. Se puede hacer, de la misma forma, mediante un pull request, en este caso al repo del compañero.
 - [x] Auto-corregir los ejercicios de esta forma, comprobando que están correctos.
 
-#Objetivos Tema 2:
+### Objetivos Tema 2:
 
 - [x] Conocer los conceptos relacionados con el proceso de virtualización tanto de software como de hardware y ponerlos en práctica.
 
-#Objetivos específicos:
+## Objetivos específicos:
 - [x] Entender el concepto de DevOps.
 - [x] Usar herramientas para gestión de los ciclos de desarrollo de una aplicación y entender cuales son estos.
 - [x] Aprender a usar integración continua en cualquier aplicación.
 
-# Objetivos Sesión 3:
+## Objetivos Sesión 3:
 
 - [x] Entender el concepto de DevOps y cómo se traduce al ciclo de vida de una aplicación.
 - [x] Comprender cómo las pruebas de software encajan dentro del concepto de infraestructura virtual.
 - [x] Usar los entornos virtuales de desarrollo en diferentes lenguajes de programación y entender su utilidad.
 - [x] Entender los ficheros de requisitos y su utilidad en las infraestructuras virtuales.
 
-# Otros objetivos
+## Otros objetivos
 
 - [x] Entregar el primer hito del proyecto al final de la semana.
 - [x]  Entender el formato JSON y su importancia para ficheros de configuración e intercambio genérico de datos. 
@@ -52,19 +52,19 @@
 - [x] Instalar las herramientas necesarias para crear y aplicar tests en un proyecto.
 - [x] Comprender el papel de las build tools o herramientas de automatización.
 
-# Objetivos Sesión 4
+## Objetivos Sesión 4
 
 - [x] Terminar la configuración de los sistemas de integración continua
 - [x] Comprender el nivel plataforma de la infraestructura virtual y su uso en prueba y producción.
 
-# Otros objetivos
+## Otros objetivos
 
 - [x] Antes de la clase de "teoría" se debería haber entregado el primer hito del proyecto.
 - [x] Configurar los toolbelt de diferentes sistemas PaaS tales como BlueMix, Heroku u OpenShift.
 - [x] Comprender los mecanismos de despliegue automático.
 - [x] Entender el formato YAML y su uso en diferentes infraestructuras virtuales.
 
-# Objetivos Tema 3
+### Objetivos Tema 3
 
 - [x] Comprender los conceptos necesarios para trabajar con diferentes plataformas PaaS.
 - [x] Aplicar el concepto de DevOps a este tipo específico de plataforma.
@@ -180,7 +180,7 @@
 
 - [X] Realizar tareas de administración de infraestructuras virtuales.
 
-##Objetivos de la Sesión 11
+##Objetivos Sesión 11
 
 - [X] Comprender el concepto de hipervisor y los diferentes tipos que hay
 
@@ -188,7 +188,7 @@
     
 - [X] Probar diferentes tipos de máquinas virtuales con sistemas operativos libres.
 
-##Objetivos de la Sesión 12
+##Objetivos Sesión 12
 
 - [X] Usar gestores de máquinas virtuales.
 
@@ -208,7 +208,7 @@
 - [X] Conocer los sistemas de gestión de la configuración, provisionamiento y monitorizació más usados hoy en día.
 
 
-##Objetivos de la Sesión 13
+##Objetivos Sesión 13
 
 - [X] Usar infraestructura en la nube
 
@@ -225,7 +225,7 @@
 
 - [X] Trabajar y solucionar problemas con la infraestructura en la nube.
 
-##Objetivos de la Sesión 14 
+##Objetivos Sesión 14 
 
 - [X] Probar diferentes formas de desplegar en la nube.
 
