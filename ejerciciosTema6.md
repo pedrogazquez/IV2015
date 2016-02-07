@@ -136,7 +136,7 @@ ansible all -u pgazquez -m command -a "sudo easy_install pip"
 ```
 Una vez hecho esto descargamos la aplicación desde nuestro repositorio  de GitHub:
 ```
-all -u pgazquez -m git -a "repo=https://github.com/pedrogazquez/appBares.git  dest=~/pruebaDAI version=HEAD"
+ansible all -u pgazquez -m git -a "repo=https://github.com/pedrogazquez/appBares.git  dest=~/pruebaDAI version=HEAD"
 ```
 En la siguiente captura vemos que el repositorio se ha copiado correctamente:
 ![repoenAzure](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-03%20160827_zpsts3m5kmv.png)
@@ -253,7 +253,7 @@ Lo primero que hacemos es instalar el provisionador de azure para Vagrant:
 ```
 vagrant plugin install vagrant-azure
 ```
-![pluginazure]()
+![pluginazure](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-07%20220453_zpsggqexnuv.png)
 Después de esto nos logueamos en azure como anteriormente (azure login) y hacemos **azure account doownload**  esto nos proporciona un enlace al que deberemos acceder para descargar nuestros credenciales y una vez descargados hacemos:
 ```
 azure account import Azure-2-5-2016-credentials.publishsettings
@@ -265,7 +265,7 @@ chmod 600 azurevagrant.key
 openssl x509 -inform pem -in azurevagrant.key -outform der -out azurevagrant.cer
 ```
 Ahora subimos el fichero **azurevagrant.cer** a Azure en el apartado Management Certificates:
-![managcert]()
+![managcert](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-05%20164823_zpskywjh3fa.png)
 
 Para autenticar Azure desde Vagranfile creamos un archivo .pem y lo concatemos el .key:
 ```
@@ -341,6 +341,9 @@ Este instala los paquetes necesarios para ejecutar nuestra app después de desca
 Ahora descargamos la box de azure con el siguiente comando:
 ```
 vagrant box add azure https://github.com/msopentech/vagrant-azure/raw/master/dummy.box
+
+![dummybox](http://i1042.photobucket.com/albums/b422/Pedro_Gazquez_Navarrete/Captura%20de%20pantalla%20de%202016-02-05%20165928_zps2kqtfjqy.png)
+
 ```
 Y ahora podemos proceder a ejecutar provider para que cree la app con el siguiente comando:
 ```
@@ -348,3 +351,4 @@ vagrant up --provider=azure
 vagrant provision (si la máquina ya está creada)
 ```
 Y una vez ejecutado se puede acceder a [nuestra app de azure](http://baresquesada.cloudapp.net/rango/)
+
